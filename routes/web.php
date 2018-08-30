@@ -11,10 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 //后台首页
-Route::get('/admin',function(){
-	return view('Admin.public.public');
-});
+Route::resource('admin','Admin\IndexController');
+//友情链接列表页
+Route::resource('adminlink','Admin\AdminLinkController');
+Route::resource('admincate','Admin\AdminCateController');

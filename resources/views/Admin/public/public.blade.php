@@ -130,15 +130,15 @@
         <li><a href="">管理员添加</a></li> 
         <li><a href="">管理员列表</a></li> 
        </ul> </li> 
-        <li> <a href="#"><i class="icon-official"></i>会员</a> 
+        <li> <a href="#"><i class="icon-official"></i>用户</a> 
        <ul class="closed"> 
-        <li><a href="">会员添加</a></li> 
-        <li><a href="">会员列表</a></li> 
+        <li><a href="">用户添加</a></li> 
+        <li><a href="">用户列表</a></li> 
        </ul> </li> 
       <li> <a href="#"><i class="icon-th-list"></i> 分类管理</a> 
        <ul class="closed"> 
-        <li><a href="">分类添加</a></li> 
-        <li><a href="">分类列表</a></li> 
+        <li><a href="/admincate/create">分类添加</a></li> 
+        <li><a href="/admincate">分类列表</a></li> 
        </ul> </li> 
       <li> <a href="#"><i class="icon-shopping-cart"></i> 商品管理</a> 
        <ul class="closed"> 
@@ -167,17 +167,27 @@
        </ul> </li>
         <li> <a href="#"><i class="icon-link"></i>友情链接</a> 
        <ul class="closed"> 
-        <li><a href="">友情链接添加</a></li> 
-        <li><a href="">友情链接列表</a></li> 
+        <li><a href="/adminlink/create">友情链接添加</a></li> 
+        <li><a href="/adminlink">友情链接列表</a></li> 
        </ul> </li>
      </ul> 
     </div> 
    </div> 
    <!-- Main Container Start --> 
    <div id="mws-container" class="clearfix"> 
+    @if(session('success'))
+        <div class="mws-form-message success">
+            {{session('success')}}
+        </div>
+    @endif
 
-  @section('content')
-  @show
+    @if(session('error'))    
+        <div class="mws-form-message warning">
+                {{session('error')}}
+        </div>
+    @endif    
+    @section('content')
+    @show
   
     <!-- footer --> 
     <div id="mws-footer">
